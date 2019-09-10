@@ -4,6 +4,8 @@
 
 Build your admin views with drag and drop.
 
+Module was created for Oxid 6.x
+
 ### IDE
 ![](ide.png)
 
