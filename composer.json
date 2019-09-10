@@ -1,0 +1,25 @@
+{
+  "name": "rs/formedit",
+  "description": "formedit",
+  "type": "oxideshop-module",
+  "keywords": ["oxid", "modules", "eShop"],
+  "homepage": "https://www.reisacher-software.de",
+  "license": [
+    "GPL-3.0-only",
+    "proprietary"
+  ],
+  "extra": {
+    "oxideshop": {
+      "target-directory": "rs/formedit"
+    }
+  },
+  "require": {
+    "php": ">=5.3",
+    "mustangostang/spyc": "^0.6.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "rs\\formedit\\": "../../../source/modules/rs/formedit"
+    }
+  }
+}

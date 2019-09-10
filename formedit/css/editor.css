@@ -1,0 +1,269 @@
+html, body
+{
+	margin: 0;			/* Remove body margin/padding */
+	padding: 0;
+	overflow: hidden;	/* Remove scroll bars on browser window */
+	font-size:10px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+#splitter1,
+#splitter2,
+#splitter3
+{
+    border:0;
+}
+#splitter1 .splitcontainer,
+#splitter2 .splitcontainer,
+#splitter3 .splitcontainer
+{
+    overflow:auto;
+}
+	.ui-layout-pane { /* all 'panes' */ 
+		overflow: auto;
+	} 
+	.ui-layout-resizer { /* all 'resizer-bars' */ 
+		background: #DDD; 
+	} 
+	.ui-layout-toggler { /* all 'toggler-buttons' */ 
+		background: #AAA; 
+	} 
+    
+.vsplitbar
+{
+	width: 5px;
+	background: #aaa;
+	background-image:url('images/vgrabber.gif');
+	background-position:center center;
+	background-repeat:no-repeat;
+}
+.hsplitbar
+{
+	height: 5px;
+	background: #aaa;
+	background-image:url('images/hgrabber.gif');
+	background-position:center center;
+	background-repeat:no-repeat;
+}
+
+#destkoptabs
+{
+    height:100%;
+    background-color:#70B8D6;
+}
+#destkoptabs .desktoptab
+{
+    height:100%;
+    background-color:#91C05E;
+}
+/*
+#destkoptabs.ui-tabs
+{
+    padding:0px;
+    border:0;
+    border-radius:0;
+}
+#destkoptabs .ui-corner-all
+{
+    border-radius:0;
+    height: 29px;
+    overflow: hidden;
+}
+#destkoptabs.ui-tabs .ui-tabs-panel
+{
+    padding:0;
+}
+#destkoptabs li .ui-icon-close 
+{ float: left; margin: 0.4em 0.2em 0 0; cursor: pointer;
+}
+*/
+#add_tab
+{
+/*position:absolute;
+right:3px;
+z-index:1;
+top:4px;*/
+}
+#projectname
+{
+    float: left;
+    line-height: 25px;
+    padding-right: 20px; 
+}
+
+
+#controlnavi .ui-corner-top,
+#controlnavi .ui-corner-all
+{
+    border-radius:0;
+}
+#controlnavi .ui-accordion-content-active
+{
+    overflow:hidden;
+    border-radius:0;
+    padding:0;
+}
+.formular
+{
+    position:absolute;
+    overflow:auto;
+    border:1px solid red;
+    left:0px;
+    right:0px;
+    top:33px;
+    bottom:0px;
+}
+.control
+{
+    height:20px;
+    line-height:20px;
+    vertical-align:middle;
+    cursor:move;
+}
+#controlnavi .control span
+{
+    margin-left:10px;
+}
+.controldrag
+{
+    width:200px;
+}
+.controldrag span
+{
+    margin-left:10px;
+}
+.element
+{
+position:absolute !important;
+width:200px;
+height:20px;
+border:1px solid black;
+background-color:white;
+line-height:20px;
+}
+.element.ui-selecting
+{
+    background: #FECA40;
+}
+.element.ui-selected
+{
+    background: #F39814; color: white;
+}
+.element button.tabbutton
+{
+margin:5px; 
+padding:0; 
+text-align:center; 
+height:calc(100% - 10px);
+line-height:calc(100% - 10px);
+box-sizing:border-box; 
+border:0;
+border:1px solid white;
+cursor:pointer;
+overflow:hidden;
+vertical-align:middle;
+}
+.element button.tabbutton.selected
+{
+border-color:black;
+}
+
+.contextmenu
+{
+display:none;
+position:absolute;
+z-index:100;
+border:1px solid #CCCCCC;
+background-color:#DDDDDD;
+}
+.contextmenu div
+{
+}
+.contextmenu div a
+{
+padding:3px 10px 3px 10px;
+display:block;
+color:black;
+text-decoration:none;
+}
+.contextmenu hr
+{
+height:1px;
+padding:0;
+margin:0;
+background-color:#CCCCCC;
+border-color:#CCCCCC;
+}
+.contextmenu div a:hover
+{
+background-color:#FDFDFD;
+}
+
+
+
+#propertybox
+{
+margin:5px;
+}
+
+
+
+.propertyelementborder
+{
+font-size:12px;
+line-height:16px;
+padding:5px;
+}
+.propertyelementborder input[type=textbox],
+.propertyelementborder select,
+.propertyelementborder textarea
+{
+width:100%;
+}
+
+
+.menutop 
+{
+position:absolute;
+min-width:300px;
+height:auto;
+background-color:white;
+z-index:10;
+padding:5px;
+border:1px solid black;
+border-top:0;
+display:none;
+}
+.menutop.right
+{
+right:0px;
+left:auto;
+top:26px;
+border-radius:0px 0px 0px 5px;
+}
+.menutop button
+{
+display:block;
+width:100%;
+}
+
+
+#propertyformborder
+{
+    position:relative;
+}
+#propertyformwait
+{
+    position:absolute;
+    left:0px;
+    right:0px;
+    top:0px;
+    bottom:0px;
+    z-index:1000;
+    background-color:white;
+    opacity:0.5;
+    display:none;
+}
+#propertyformwait.active
+{
+    display:block;
+}
