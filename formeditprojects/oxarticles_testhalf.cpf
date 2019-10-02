@@ -1,0 +1,91 @@
+/*JSON*/
+{
+    "tab5d950def04cae": {
+        "form": {
+            "classname": "basetab",
+            "property": {
+                "id": "tab5d950def04cae",
+                "bezeichnung": "main",
+                "customerid": "",
+                "table": "oxarticles",
+                "colindex": "oxid",
+                "subtabledefinition": "",
+                "passwordvalidation": "0",
+                "passwordvalidation_desc": "",
+                "passwordvalidation_class": "",
+                "debugmode": "0"
+            }
+        },
+        "elements": {
+            "element5d950e03c65d8": {
+                "classname": "label",
+                "property": {
+                    "bezeichnung": "Title",
+                    "textalign": "",
+                    "hasparentcontrol": "",
+                    "customerid": "",
+                    "languageid": "",
+                    "invisible": "0",
+                    "style": ""
+                },
+                "id": "element5d950e03c65d8",
+                "left": "10",
+                "top": "10",
+                "height": "20",
+                "width": "200",
+                "zindex": "1",
+                "containerid": "tab5d950def04cae"
+            },
+            "element5d950e1a478a8": {
+                "classname": "textbox",
+                "property": {
+                    "standardtext": "",
+                    "pflichtfeld": "1",
+                    "fehlermeldung": "Title is required",
+                    "minlength": "",
+                    "maxlength": "",
+                    "ignorelength": "",
+                    "onlyallowedcharacters": "0",
+                    "allowedcharacters": "",
+                    "readonly": "0",
+                    "datenbankspalte": "oxtitle",
+                    "datenbankspaltebeschreibung": "",
+                    "allownull": "0",
+                    "taborder": "",
+                    "hasparentcontrol": "",
+                    "customerid": "",
+                    "languageid": "",
+                    "invisible": "0",
+                    "style": ""
+                },
+                "id": "element5d950e1a478a8",
+                "left": "220",
+                "top": "10",
+                "height": "20",
+                "width": "200",
+                "zindex": "1",
+                "containerid": "tab5d950def04cae"
+            },
+            "element5d950e303ba24": {
+                "classname": "button_save",
+                "property": {
+                    "bezeichnung": "Save",
+                    "loadformular": "#STARTFORM#",
+                    "disabled": "0",
+                    "hasparentcontrol": "",
+                    "customerid": "",
+                    "languageid": "",
+                    "invisible": "0",
+                    "style": ""
+                },
+                "id": "element5d950e303ba24",
+                "left": "220",
+                "top": "40",
+                "height": "30",
+                "width": "200",
+                "zindex": "1",
+                "containerid": "tab5d950def04cae"
+            }
+        }
+    }
+}
