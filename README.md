@@ -46,7 +46,7 @@ Search for function **changeEditBar**. Copy following snippet on the top of the 
     /* cpformedit start */
     var input = document.createElement("input");
     input.setAttribute("type", "hidden");
-    input.setAttribute("name", "cpformedit_sPos");
+    input.setAttribute("name", "rs_formedit_sPos");
     input.setAttribute("value", sPos);
     top.basefrm.edit.document.getElementById( "transfer" ).appendChild(input);
 
@@ -64,7 +64,7 @@ Search for function **changeEditBar**. Copy following snippet on the top of the 
     }
     var input = document.createElement("input");
     input.setAttribute("type", "hidden");
-    input.setAttribute("name", "cpformedit_sNode");
+    input.setAttribute("name", "rs_formedit_sNode");
     input.setAttribute("value", sNode);
     top.basefrm.edit.document.getElementById( "transfer" ).appendChild(input);
     /* cpformedit end */

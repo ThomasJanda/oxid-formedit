@@ -8,6 +8,7 @@ class rs_formedit_halfpage extends \OxidEsales\Eshop\Application\Controller\Admi
 
     public function render()
     {
+
         parent::render();
         $oConfig = $this->getConfig();
         $sOxId = $this->getEditObjectId();
@@ -15,14 +16,14 @@ class rs_formedit_halfpage extends \OxidEsales\Eshop\Application\Controller\Admi
         $request = oxNew(Request::class);
 
         //load tab parameter
-        $myAdminNavigation = $this->getNavigation();
         $iActTab = $request->getRequestEscapedParameter('rs_formedit_sPos');
         $sNode   = $request->getRequestEscapedParameter('rs_formedit_sNode');
         
         // set tabs parameter
+        $myAdminNavigation = $this->getNavigation();
         $myAdminNavigation->rsformedit_setTabsParameter($sNode, $iActTab);
-        
-        $useindex= oxRegistry::getConfig()->getRequestParameter('useindex');
+
+        $useindex= $request->getRequestEscapedParameter('useindex');
         if($useindex=="")
             $useindex="index1value";
         
@@ -34,7 +35,8 @@ class rs_formedit_halfpage extends \OxidEsales\Eshop\Application\Controller\Admi
         $this->_aViewData['formedit_index2']=($useindex=="index2value"?$sOxId:'');
         $this->_aViewData['formedit_language']=$this->_iEditLang;
         $this->_aViewData['formedit_navi']='EDIT';
-        
+
+
         return "rs_formedit_halfpage.tpl";
     }
 }

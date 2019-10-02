@@ -38,6 +38,7 @@ class cpfFileParser
                 } else {
                 }
             }
+
             if (!file_exists($path)) {
                 echo "PROJECT NOT FOUND $_REQUEST[projectload] ($path)";
                 die;
@@ -135,13 +136,17 @@ class cpfFileParser
         $baseDir = $si->getModulesDir();
         $baseUrl = $si->getModulesUrl();
 
-        if (!preg_match('`^(https?://|/)`', $path)) {
+        if(substr($path,0,strlen('https://')=="https://") ||
+            substr($path,0,strlen('http://')=="http://") ||
+            substr($path,0,strlen('/')=="/")
+        )
+        {
             // this means path is relative to modules dir, so make it absolute by prepending modules url
             $path = rtrim($baseUrl, "/") . "/$path";
         }
 
         // make sure baseUrl has matching protocol, for successful replacement later.
-        if (preg_match('`^https?://`', $path, $match)) {
+        if (preg_match('`^(http?://|https?://)`', $path, $match)) {
             $protocol = $match[0];
             $baseUrl = preg_replace('`^https?://`', $protocol, $baseUrl);
         }

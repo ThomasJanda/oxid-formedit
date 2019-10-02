@@ -14,7 +14,7 @@
 <iframe frameborder="0" style="
 border: 0 solid black;
 height: 100%;
-eft: 0;
+left: 0;
 padding: 0;
 position: absolute;
 top: 0;

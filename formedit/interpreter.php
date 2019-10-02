@@ -88,10 +88,13 @@ if (!$ini["project"]) {
 }
 
 $path = $ini["project"];
+
+
 if(substr($path,0,strlen(shopInterface::getInstance()->getModulesDir()))!=shopInterface::getInstance()->getModulesDir())
 {
     $path = shopInterface::getInstance()->getModulesDir().$path;
 }
+
 
 // setting absolute path of the current used project.
 $hsConfig->setInterpreterValue("projectname", $path);

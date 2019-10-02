@@ -16,7 +16,6 @@ class NavigationTree extends NavigationTree_parent
         $iAct = ($iAct > $oNodeList->length) ? ($oNodeList->length - 1) : $iAct;
         if ($oNodeList->length && ($oNode = $oNodeList->item($iAct))) {
             $sParam = $oNode->getAttribute('clparam');
-
             if($sParam!="")
             {
                 $tmp=array();
@@ -28,6 +27,7 @@ class NavigationTree extends NavigationTree_parent
                 for($x=0;$x<count($tmp);$x++)
                 {
                     $tmp2=explode("=",$tmp[$x]);
+
                     $_GET[$tmp2[0]]=$tmp2[1];
                 }
             }
