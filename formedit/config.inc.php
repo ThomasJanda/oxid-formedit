@@ -15,10 +15,11 @@ ini_set("memory_limit","400M");
 ini_set("max_execution_time","3600");
 ini_set("default_socket_timeout","3600");
 
-$this->urlroot     = $oxConfig->getConfigParam('sShopURL') . "/modules/rs/formedit/formedit/";
-$this->dirroot     = $oxConfig->getConfigParam('sShopDir') . "/modules/rs/formedit/formedit/";
-$this->sShopDir = $oxConfig->getConfigParam('sShopDir')."/";
-$this->sShopURL  = $oxConfig->getConfigParam('sShopURL')."/";
+$this->urlroot     = rtrim($oxConfig->getConfigParam('sShopURL'),"/") . "/modules/rs/formedit/formedit/";
+$this->dirroot     = rtrim($oxConfig->getConfigParam('sShopDir'),"/") . "/modules/rs/formedit/formedit/";
+$this->sShopDir = rtrim($oxConfig->getConfigParam('sShopDir'),"/")."/";
+$this->sShopURL  = rtrim($oxConfig->getConfigParam('sShopURL'),"/")."/";
+$this->sCompileDir = rtrim($oxConfig->getConfigParam('sCompileDir'),"/")."/";
 
 $this->dbhost = $oxConfig->getConfigParam('dbHost');
 $this->dbport = $oxConfig->getConfigParam('dbPort');

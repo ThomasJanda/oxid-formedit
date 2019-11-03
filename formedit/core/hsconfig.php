@@ -12,6 +12,7 @@ class hsconfig
     protected      $dirroot           = "";
     public      $sShopDir = "";
     public      $sShopURL = "";
+    public      $sCompileDir = "";
     protected      $dbhost            = "";
     protected      $dbport            = "";
     protected      $dbname            = "";

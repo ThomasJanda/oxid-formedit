@@ -12,18 +12,19 @@ if (isset($_REQUEST["projectsave"]) && $_REQUEST["projectsave"] != "") {
 
     //make a backup
     if (file_exists($path)) { // see ./config.inc.php
-        if( !is_dir($dirPath . "/backup") ) {
-            if (!mkdir($dirPath . "/backup") && !is_dir($dirPath . "/backup")) {
-                throw new \RuntimeException(sprintf('Directory "%s" was not created', $dirPath . "/backup"));
+        $sBackupPath = $config->sCompileDir;
+        if( !is_dir($sBackupPath . "/backup") ) {
+            if (!mkdir($sBackupPath . "/backup") && !is_dir($sBackupPath . "/backup")) {
+                throw new \RuntimeException(sprintf('Directory "%s" was not created', $sBackupPath . "/backup"));
             }
         }
-        if( !is_dir($dirPath . "/backup/" . $filename) ) {
-            if (!mkdir($dirPath . "/backup/" . $filename) && !is_dir($dirPath . "/backup/" . $filename)) {
-                throw new \RuntimeException(sprintf('Directory "%s" was not created', $dirPath . "/backup/" . $filename));
+        if( !is_dir($sBackupPath . "/backup/" . $filename) ) {
+            if (!mkdir($sBackupPath . "/backup/" . $filename) && !is_dir($sBackupPath . "/backup/" . $filename)) {
+                throw new \RuntimeException(sprintf('Directory "%s" was not created', $sBackupPath . "/backup/" . $filename));
             }
         }
         $backupFileName = date("Ymd.His");
-        copy($path, "$dirPath/backup/$filename/$backupFileName.bak.cpf"); // easier to exclude in phpstorm if it has extension
+        copy($path, "$sBackupPath/backup/$filename/$backupFileName.bak.cpf"); // easier to exclude in phpstorm if it has extension
     }
 
     // yaml is the new preferred format

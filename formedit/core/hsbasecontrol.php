@@ -181,7 +181,7 @@ class basecontrol extends baseelement
                 $css["display"] = "none";
             }
 
-            if ($_REQUEST['visible']) {
+            if ($_REQUEST['visible'] ?? false) {
                 $css["display"] = "block";
             }
         }

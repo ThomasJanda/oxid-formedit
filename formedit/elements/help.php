@@ -31,6 +31,7 @@ js;
 
     public function getInterpreterRender()
     {
+        $minwidth=0;
         $maxwidth=$this->property['maxwidth'];
         if($maxwidth=="" || is_numeric($maxwidth)==false)
             $maxwidth=300;
