@@ -91,15 +91,16 @@ You can extend the menu.xml from the module to call the project.
                 <SUBMENU id="mxarticles" cl="article" list="article_list">
                     <!--
                     attribute
-                    cl = rs_formedit_half|rs_formedit_full
-                        rs_formedit_half = like the bottom part of the article view
-                        rs_formedit_full = a fullpage view
+                    cl = rs_formedit_halfpage|rs_formedit_fullpage|rs_formedit_fullpage_lang
+                        rs_formedit_halfpage = like the bottom part of the article view
+                        rs_formedit_fullpage = a fullpage view
+                        rs_formedit_fullpage_lang = a fullpage view with language select box
                     clparam = combination from parameters seprated with &amp;
                         parameter:
                         project=path within the module folder to the projectfile (example: project=cpoxshop/cpformedit/oxshop.cpf)
                         optional: navi= in which mode should the formeid start. values=NEW|EDIT. default=NEW
                         optional: index1value=unique identifier what should load at the beginning. if you want load data directly (parameter navi must set to EDIT) Only on cpformedit_fullpage|cpformedit_fullpage_lang
-                        optional: useindex=index1value|index2value. Default: index1. Normally in a tab the oxid from a article,user... is set into the index1value parameter, but if you like to bild a n:m relation it have to start with index2value. navi have to set to NEW. Only on cpformedit_halfpage
+                        optional: useindex=index1value|index2value. Default: index1. Normally in a tab the oxid from a article,user... is set into the index1value parameter, but if you like to build a n:m relation it have to start with index2value. navi have to set to NEW. Only on cpformedit_halfpage
                     -->
                     <TAB id="tbclcpformedit_article" cl="rs_formedit_halfpage" clparam="project=MODULEFOLDER/cpformedit/oxarticles.cpf" />
                 </SUBMENU>

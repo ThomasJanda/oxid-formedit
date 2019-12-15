@@ -104,6 +104,7 @@ html;
             $project = str_replace(shopInterface::getInstance()->getModulesDir(), "", $project);
 
             $iframeSrc = $hs->getBaseUrl() . "/interpreter.php?$project&index2value={$hs->getIndex1Value()}";
+            $iframeSrc.="&languageedit=".$hs->getLanguageEdit()."&languageadmin=".$hs->getLanguageAdmin();
             $urlParameter = trim($this->property['urlparameter']);
             if ($urlParameter) {
                 $iframeSrc .= '&' . $hs->parseSQLString($urlParameter);

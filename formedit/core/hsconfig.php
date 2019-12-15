@@ -498,6 +498,12 @@ class hsconfig
 
         $ini = $_REQUEST + $mandatoryValues;
 
+        /*
+        echo '<pre>';
+        print_r($ini);
+        echo '</pre>';
+        */
+        
         // if users land on a page with a form id and an index1, assume navi=dit
         $ini["navi"] = $_REQUEST["navi"] ?? ($ini["index1value"] ? "EDIT" : "NEW");
 

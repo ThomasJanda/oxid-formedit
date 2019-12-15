@@ -17,11 +17,13 @@ $aModule = array(
     'controllers' => array(
         'rs_formedit_ide'      => rs\formedit\Application\Controller\Admin\rs_formedit_ide::class,
         'rs_formedit_fullpage' => rs\formedit\Application\Controller\Admin\rs_formedit_fullpage::class,
+        'rs_formedit_fullpage_lang' => rs\formedit\Application\Controller\Admin\rs_formedit_fullpage_lang::class,
         'rs_formedit_halfpage' => rs\formedit\Application\Controller\Admin\rs_formedit_halfpage::class,
     ),
     'templates'   => array(
         'rs_formedit_ide.tpl'      => 'rs/formedit/views/admin/tpl/rs_formedit_ide.tpl',
         'rs_formedit_fullpage.tpl' => 'rs/formedit/views/admin/tpl/rs_formedit_fullpage.tpl',
+        'rs_formedit_fullpage_lang.tpl' => 'rs/formedit/views/admin/tpl/rs_formedit_fullpage_lang.tpl',
         'rs_formedit_halfpage.tpl' => 'rs/formedit/views/admin/tpl/rs_formedit_halfpage.tpl',
     ),
     'blocks'      => array(),
