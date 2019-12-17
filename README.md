@@ -7,9 +7,11 @@ Build your admin views with drag and drop.
 Module was created for Oxid 6.x
 
 ### IDE
+
 ![](ide.png)
 
 ### Results
+
 ![](view1.png)
 ![](view2.png)
 
@@ -35,7 +37,7 @@ Module was created for Oxid 6.x
         composer dump-autoload
 
 
-## Modifications
+4. Modifications
 
 Modify following file:
 
@@ -69,17 +71,25 @@ Search for function **changeEditBar**. Copy following snippet on the top of the 
     top.basefrm.edit.document.getElementById( "transfer" ).appendChild(input);
     /* cpformedit end */
 
+5. Security
+
+Please add a .htaccess/.htpasswd to the oxid admin and copy the .htaccess to the folder:
+
+    rs/formedit/formedit
+
+to prevent access the backend views from outside of the oxid admin area.
+
 
 ## How to use
 
-You can add formedit project to all modules from this shop.
+You can add formedit projects to all modules from this shop.
 Create a folder 
 
     formeditprojects
      
 within the modules.
 
-You can extend the menu.xml from the module to call the project.
+You can extend the menu.xml of the module to call the project.
 
 
 ## Example "menu.xml"
@@ -111,5 +121,5 @@ You can extend the menu.xml from the module to call the project.
 ## Other featues
 
 * You can extend the formedit views by php files to implement new validations
-* You can develop your own controls for easy reuse them
+* You can develop your own controls for easy reuse
 * ...
