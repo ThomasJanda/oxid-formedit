@@ -28,16 +28,17 @@ Module was created for Oxid 6.x
                 "rs\\formedit\\": "./source/modules/rs/formedit"
             }
         },
-        "require": {
-            "mustangostang/spyc": "^0.6.2"
-        },
 
-3. Refresh autoloader files with composer in the oxid root directory.
+3. Install dependencies
+
+        composer require mustangostang/spyc --no-update
+        composer update --no-plugins --no-scripts --no-dev --ignore-platform-reqs
+
+4. Refresh autoloader files with composer in the oxid root directory.
 
         composer dump-autoload
 
-
-4. Modifications
+5. Modifications
 
 Modify following file:
 
@@ -71,7 +72,7 @@ Search for function **changeEditBar**. Copy following snippet on the top of the 
     top.basefrm.edit.document.getElementById( "transfer" ).appendChild(input);
     /* cpformedit end */
 
-5. Security
+6. Security
 
 Please add a .htaccess/.htpasswd to the oxid admin and copy the .htaccess to the folder:
 
