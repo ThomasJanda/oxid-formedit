@@ -33,7 +33,7 @@ js;
     {
         $minwidth=0;
         $maxwidth=$this->property['maxwidth'];
-        if($maxwidth=="" || is_numeric($maxwidth)==false)
+        if($maxwidth==="" || is_numeric($maxwidth)===false || $maxwidth===0)
             $maxwidth=300;
 
         /*
@@ -72,11 +72,16 @@ js;
             $sText='<img src="'.$this->property['picture_SOURCE'].'" style="max-width:'.$maxwidth.'px; " border="1"><br>'.$sText;
         }
 
-        $e = '<div data-customeridbox="'.$this->getCustomerId().'" data-hasparentcontrol="'.$this->getParentControl().'" class="tooltipbox '.$this->property['classname'].'" id="'.$this->id.'" style="'.$this->getParentControlCss().''.$this->property['css'].' position:absolute; left:'.$this->left.'px; top:'.$this->top.'px; width:20px; height:20px; line-height:20px; cursor:help; '.($this->property['invisible']=="1"?' display:none; ':'').'">
-            <span data-maxwidth="'.$minwidth.'" id="' . $this->id . 'icon" class="tooltipicon ui-icon ui-icon-help" title=""></span>
+        $e="";
+        if(trim($sText)!="")
+        {
+                    $e = '<div data-customeridbox="'.$this->getCustomerId().'" data-hasparentcontrol="'.$this->getParentControl().'" class="tooltipbox '.$this->property['classname'].'" id="'.$this->id.'" style="'.$this->getParentControlCss().''.$this->property['css'].' position:absolute; left:'.$this->left.'px; top:'.$this->top.'px; width:20px; height:20px; line-height:20px; cursor:help; '.($this->property['invisible']=="1"?' display:none; ':'').'">
+            <span data-maxwidth="'.$maxwidth.'" id="' . $this->id . 'icon" class="tooltipicon ui-icon ui-icon-help" title=""></span>
             <div id="'.$this->id.'text" class="tooltiptext" style="display:none; ">'.$sText.'</div>
         </div>
         ';
+        }
+
 
         return $e;
     }

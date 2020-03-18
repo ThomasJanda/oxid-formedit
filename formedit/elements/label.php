@@ -11,6 +11,12 @@ class label extends basecontrol
 
     public function getInterpreterRender()
     {
+        $csswidth = "width:".$this->width."px;";
+        if($this->property['fixwidth']=="0")
+        {
+            $csswidth = "width:calc(100% - ".($this->left * 2)."px);";
+        }
+        
         $e = '<div data-customeridbox="'.$this->getCustomerId().'" 
         data-hasparentcontrol="'.$this->getParentControl().'" 
         class="'.$this->property['classname'].'" 
@@ -21,7 +27,7 @@ class label extends basecontrol
             position:absolute; 
             left:'.$this->left.'px; 
             top:'.$this->top.'px; 
-            width:'.$this->width.'px; 
+            '.$csswidth.' 
             height:'.$this->height.'px; 
             line-height:'.$this->height.'px; 
             '.$this->property['style'].' 
@@ -42,7 +48,9 @@ class label extends basecontrol
         $html.=parent::getEditorPropertyHeader();
         $html.=parent::getEditorProperty_Textbox("Title",'bezeichnung');
         $html.=parent::getEditorProperty_Selectbox("Alignment",'textalign', ['' => 'Right', 'left' => 'Left', 'center' => 'Center', 'right' => 'Right'], '');
-        //$html.=parent::getEditorProperty_Textbox("CSS-style",'style');
+        $html.=parent::getEditorProperty_Line();
+        $html.=parent::getEditorProperty_Checkbox("Fix width from the element, otherwise 100% - 2 times left", 'fixwidth', '1');
+        $html.=parent::getEditorProperty_Line();
         $html.=parent::getEditorPropertyFooter(true,false,false);
         return $html;
     }
