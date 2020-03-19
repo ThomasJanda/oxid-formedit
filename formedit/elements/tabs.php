@@ -66,7 +66,7 @@ class tabs extends basecontrol
 
         return $this->_aDisplayConditions;
     }
-    
+
     public function getSelectedTabId()
     {
         // stored in cookie when tab is clicked.
@@ -79,7 +79,7 @@ class tabs extends basecontrol
     public function getSelectedTab()
     {
         $id=$this->getSelectedTabId();
-        
+
         $tabs=trim($this->property['tabs']);
         if($tabs!="")
         {
@@ -91,7 +91,7 @@ class tabs extends basecontrol
             else
             {
                 $sName = $tabs[$id];
-                if($aDisplayConditions[$sName]!="")
+                if(isset($aDisplayConditions[$sName]) && $aDisplayConditions[$sName]!="")
                 {
                     //should make better and search for the next enabled tab
                     $id=0;
@@ -104,15 +104,15 @@ class tabs extends basecontrol
     {
         $hsconfig = getHsConfig();
         $interpreterid = $hsconfig->getInterpreterId();
-        
+
         $e="";
         $name=trim($this->property['name']);
         $tabs=trim($this->property['tabs']);
-        
+
         if($tabs!="")
-        {   
+        {
             $tabs=explode("|",$tabs);
-            
+
             $e.= '<script type="text/javascript">    
                
                 function tabclicked'.$interpreterid.$this->name.$this->id.'(id, tabid)
@@ -120,7 +120,7 @@ class tabs extends basecontrol
                     $("#" + id).parent().children().removeClass("selected");
                     $("#" + id).addClass("selected");
                     ';
-    
+
                     for($xx=0;$xx<count($tabs);$xx++)
                     {
                         $tmpid2   = $this->containerid."_".$this->id."_".$xx;
@@ -128,7 +128,7 @@ class tabs extends basecontrol
                         $("div[data-hasparentcontrol='.$tmpid2.']").css("display","none");
                         ';
                     }
-                  
+
                     $e.='
                     $("div[data-hasparentcontrol=" + id + "]").css("display","block"); 
                     
@@ -146,7 +146,7 @@ class tabs extends basecontrol
             /* tabclicked'.$interpreterid.$this->name.$this->id.'("'.$this->getSelectedTab().'","'.$this->getSelectedTabId().'"); */
         }
         return $e;
-    } 
+    }
     public function getEditorRender($text="")
     {
         $hsconfig = getHsConfig();
@@ -158,10 +158,10 @@ class tabs extends basecontrol
         $e = '<div class="element" id="'.$this->id.'" style="left:'.$this->left.'px; top:'.$this->top.'px; '.$csswidth.' height:'.$this->height.'px; z-index:1;  ">
         <input type="hidden" name="classname" value="'.get_class($this).'">
         <input type="hidden" name="containerid" value="'.$this->containerid.'">';
-        
+
         //$e.='$_SESSION['.$this->containerid.']['.$this->name.']['.$this->id.']<br>';
         //$e.=$this->getSelectedTab().'<br>';
-        
+
         $name=trim($this->property['name']);
         $tabs=trim($this->property['tabs']);
         if($tabs!="")
@@ -255,7 +255,7 @@ html;
             class="elementtab '.$this->property['classname'].'" 
             id="'.$this->id.'" 
             style="text-align:right; '.$this->property['css'].' position:absolute; left:'.$this->left.'px; top:'.$this->top.'px; '.$csswidth.' height:'.$this->height.'px; line-height:'.$this->height.'px; ">';
-        
+
         $tabs=$this->property['tabs'];
         $tabs=explode("|",$tabs);
         if(count($tabs)>0)
@@ -272,7 +272,7 @@ html;
                     id=$tmpid 
                     style='width:calc($width% - 10px)'
                     ";
-                if($aDisplayConditions[$tabs[$x]]!="")
+                if(isset($aDisplayConditions[$tabs[$x]]) && $aDisplayConditions[$tabs[$x]]!="")
                 {
                     $e.=" disabled='disabled' ";
                     $e.=" title='".$aDisplayConditions[$tabs[$x]]."' ";
@@ -283,7 +283,7 @@ html;
                         {$tabs[$x]}</button>";
             }
         }
-        
+
         $e.= '</div>';
         return $e;
     }
@@ -292,7 +292,7 @@ html;
     {
         $html='';
         $html.=parent::getEditorPropertyHeader();
-        
+
         $html.=parent::getEditorProperty_Textbox("Name",'name');
         $html.=parent::getEditorProperty_Textarea("Tabs (seperate with |. e.g. tab1|tab2|tab3)",'tabs');
         $html.=parent::getEditorProperty_Textarea("Should the tab disable? One condition per line. Schema: TABNAME=SQL which return a string which use as tooltip, if nothing return (empty string) the button stay enabled",'displaycondition');

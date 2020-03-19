@@ -316,7 +316,7 @@ class table extends basecontrol
         $this->debug[] = "\nSelect:\n" . $sqlstring;
         $this->debug[] = "\nCount:\n" . $sqlstringcount;
 
-        $this->debug[] = "\nUnique grid Id: $this->uniqueGridId.\nIndexes:($_REQUEST[index1value]|$_REQUEST[index2value])\n";
+        $this->debug[] = "\nUnique grid Id: $this->uniqueGridId.\nIndexes:(".(($_REQUEST['index1value']??'')|($_REQUEST['index2value']??"")).")\n";
 
         // start building the final html
 

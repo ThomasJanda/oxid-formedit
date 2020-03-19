@@ -54,7 +54,19 @@ function getDirectoryList($root,$start=true)
                 //first level
                 if($file!="." && $file!=".." && is_dir($root."/".$file))
                 {
+                    if(file_exists("$root/$file/$hsconfig->formeditFolderName")) {
+                        $list[] = "$root/$file/$hsconfig->formeditFolderName";
+                    }
+                    else
+                    {
+                        $tmp = getDirectoryList("$root/$file",false);
+                        if(count($tmp)>0)
+                        {
+                            $list = array_merge($list,$tmp);
+                        }
+                    }
                     //if vendormetadata.php exists, than search within subdirectory
+                    /*
                     if(file_exists($root."/".$file."/vendormetadata.php"))
                     {
                         $tmp = getDirectoryList($root."/".$file,false);
@@ -67,6 +79,7 @@ function getDirectoryList($root,$start=true)
                     {
                         $list[]=$root."/".$file."/$hsconfig->formeditFolderName";
                     }
+                     */
                 }
 
             }

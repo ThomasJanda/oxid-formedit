@@ -29,4 +29,4 @@ $this->dbpass = $oxConfig->getConfigParam('dbPwd');
 $this->dbutf8 = 1;
 
 $this->formeditFolderName = "formeditprojects";
-$this->modulesFolder = $oxConfig->getConfigParam('sShopDir') . "/modules/";
+$this->modulesFolder = rtrim($oxConfig->getConfigParam('sShopDir'),"/") . "/modules/";
