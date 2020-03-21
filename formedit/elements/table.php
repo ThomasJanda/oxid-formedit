@@ -1531,7 +1531,7 @@ html;
                 if ($formatcol == "currency")
                 {
                     if(substr($val,0,strlen('#AJAXREQUEST'))!="#AJAXREQUEST")
-                        $val = "$".$this->currency_format($val, ".", ",", 2);
+                        $val = "€ ".$this->currency_format($val, ".", ",", 2);
                 }
                 if ($formatcol == "percent")
                 {
