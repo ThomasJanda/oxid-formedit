@@ -44,6 +44,7 @@ function getDirectoryList($root,$start=true)
     {
         return $list;
     }
+    $root = rtrim($root,"/");
 
     $hsconfig = getHsConfig();
 
