@@ -1237,14 +1237,15 @@ html;
 
             if(count($aTable)>0)
             {
+                /*
                 include_once __DIR__."/../../../../inc/cexportexcel.php";
                 $oExcel = new \cexportexcel();
                 $oExcel->setForceDownload(true);
                 $oExcel->setFilename($filename);
-                //$oExcel->setPath($cconfig3->getShopBaseDir());
-                /** start converting into a csv file **/
                 $oExcel->exportFromArray($aTable, $aFields);
                 unset($oExcel);
+                 */
+                echo "NOT IMPLEMENTED";
             }
         }
     }

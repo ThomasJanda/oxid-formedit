@@ -516,6 +516,7 @@ class hsconfig
     private function generateProjectName($project)
     {
         // todo: this is not compatible with the shops.
+        /*
         if (strpos($project, "/") === false) {
             // using only file name, will search inside all modules inside the formedit folder.
             $cronjobsSearcher = cConfig3::get("cronjobsSearcher");
@@ -540,6 +541,7 @@ class hsconfig
 
             $project = $this->cleanLink($project);
         }
+         */
 
         return $project;
     }
