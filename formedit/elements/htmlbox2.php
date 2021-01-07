@@ -98,7 +98,7 @@ class htmlbox2 extends basecontrol
 
             $sqlstring = "SELECT count(*)
             FROM information_schema.COLUMNS
-            WHERE TABLE_SCHEMA = '".$hsconfig->dbName."'
+            WHERE TABLE_SCHEMA = '".$hsconfig->getDbName()."'
             AND TABLE_NAME = '".$table."'
             AND COLUMN_NAME = '".$dbfield."_onlysource'";
             if($hsconfig->getScalar($sqlstring)!="0") {

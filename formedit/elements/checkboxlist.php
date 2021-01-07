@@ -79,6 +79,7 @@ class checkboxlist extends basecontrol
                 <button type='button' onclick='checkboxlist".$this->id."_unselect(); '>Unselect all</button>
             </div>";
 
+            $x=0;
             while($row = $rs->fetch_array(MYSQLI_NUM))
             {
                 $checked=false;
@@ -96,6 +97,7 @@ class checkboxlist extends basecontrol
                 $e.="<div style='line-height:20px; '>
                     <input name='".$this->id."[]' id='".$interpreterid.$this->name.$this->id.$x."' type='checkbox' value='".$row[0]."'  ".($checked?'checked':'')."><label for='".$interpreterid.$this->name.$this->id.$x."'>".$row[1]."</label>
                 </div>";
+                $x++;
             }
         }
         $e.='</div>
